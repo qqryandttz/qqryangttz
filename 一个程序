@@ -1,0 +1,1254 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include <windows.h>
+#include<stdlib.h>
+void color(short x)
+{
+	if (x >= 0 && x <= 15)
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), x);
+	else
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+}
+int g, gg = 0, ggg,q;
+struct chenyuan
+{
+	char num[10];
+	char name[10];
+	char xb[10];
+	char score[3];
+}cy[10];
+struct zhuzhi
+{
+	char name1[10];
+	struct chenyuan cy[10];
+}zz;
+int main()
+{
+	FILE* fp;
+	void zhuzhiyemian();                                                                //先输入身份   1
+	void chenyuan();
+	void wdzzcz();
+	void xuanze();
+	void jiazai();
+	color(14);
+	printf("正在为您创立极点身份信息\n\n请输入您的相关信息 -->\n\n");
+	color(16);
+	printf("请输入您的姓名：");
+	scanf("%s", cy[0].name, 5);
+	getchar();
+	printf("请输入您的性别：");
+	scanf("%s", cy[0].xb, 5);
+	getchar();
+
+	printf("请输入您的副本通关详情（输入1-20其中一个数字）：");
+	scanf("%s", cy[0].score);
+	getchar();
+
+	color(14);
+	printf("\n\n信息已成功录入！");
+	color(16);
+	printf("\n\n欢迎进入终端！\n\n");
+	system("pause");
+
+
+	jiazai();
+	color(14);
+	printf("载入成功！\n正在为您打开<终端>\n");
+	color(11);
+	printf("    ·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n");
+	printf("    *                    【欢迎来到极点015区】                   *\n");
+	printf("    *                【科技至上，大自然高于一切】                *\n");
+	printf("    *                                                            *\n");
+	printf("    *                  现在请选择您要进入的系统  -->             *\n");
+	printf("    *                    输入1：个人基本信息系统                 *\n");
+	printf("    *                    输入2：极点任务系统                     *\n");
+	printf("    *                    输入3：组织创立与管理系统               *\n");
+	printf("    *                    输入4：极点公告栏系统                   *\n");
+	printf("    *                    输入5：交流与通讯系统                   *\n");
+	printf("    *                                                            *\n");
+	printf("    ·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n");
+	color(16);
+
+
+	color(15);
+	printf("   \n                         请输入一位数字:");
+	color(16);
+	char a;
+	a = getchar();
+	getchar();
+	switch (a)
+	{
+
+	case '1':
+	{
+		jiazai();
+		printf("载入成功！\n\n");
+		color(14);
+		printf("    正在为您打开<个人基本信息系统>\n");
+		color(11);
+		printf("    ·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n");
+		printf("                            您的姓名是：%s\n", cy[0].name);
+		printf("                            您的性别是：%s\n", cy[0].xb);
+		printf("                            您已通关副本：第%s关\n", cy[0].score);
+		printf("    ·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n\n"); color(16);
+	}
+	case '2':
+	case '4':
+	case '5':
+	{
+		if (a == '2' || a == '4' || a == '5')
+			printf("\n抱歉！\n系统正在搭建中！");
+		color(15);
+		printf("\n\n\n   现在是否为您打开<组织创立与管理系统 >\n\n   确定  -->\n\n   ");
+		color(16);
+		system("pause");
+
+	}
+
+	case '3':
+	{
+		break;
+	}
+
+	default:
+	{
+		system("cls");
+		color(12);
+		printf("输入错误！");
+		color(15);
+		printf("\n\n\n   现在是否为您打开<组织创立与管理系统 >\n\n   确定  -->\n\n   ");
+		color(16);
+		system("pause");
+		break;
+	}
+	}
+	jiazai();
+	color(15);
+	printf("现在请选择 -->\n");
+	color(16);
+	zhuzhiyemian();//ss
+
+	int u = 2;
+	do                   //第一个
+	{
+		int i = 0;
+		while (!i)
+		{
+			int c;
+			color(15);
+			printf("\n                     请输入一位数字:");
+			color(16);
+			char b;
+			scanf("%c", &b);
+			getchar();
+			printf("\n");
+			switch (b)
+			{
+			case '1':
+			{
+				jiazai();
+				color(12);
+				printf("载入失败！\n\n");
+				color(16);
+				printf("暂无相关数据！请先创立或加入一个组织！\n\n即将返回<组织创立与管理系统页面 >\n");
+				i = 0;
+				system("pause");
+				break;
+			}
+			case '2':
+			{
+				i = 1;
+				break;
+			}
+			case '3':
+			{
+				jiazai();
+				color(12);
+				printf("载入失败！\n\n");
+				color(16);
+				printf("暂无相关数据！\n\n即将返回<组织创立与管理系统页面 >\n");
+				i = 0;
+				system("pause");
+				break;
+			}
+			case '4':
+				exit(0);
+				break;
+			default:
+			{
+				system("cls");
+				color(12);
+				printf("\n\n注意！请正确地输入！\n\n");
+				int c;
+				while ((c = getchar()) != '\n' && c != EOF); //缓冲区
+				color(16);
+				system("pause");
+				i = 0;
+			}
+
+			}
+			//载入终端结束，进入组织页面
+
+			if (i == 0)
+			{
+				system("cls");
+				color(14);
+				printf("载入成功！\n正在为您打开<组织创立与管理系统 >：\n");
+				color(15);
+				printf("现在请重新选择 -->\n");
+				color(16);
+				zhuzhiyemian();//ss
+			}
+		}
+		system("cls");
+		color(15);
+		printf("\n请确定是否进入<创立组织界面 >\n\n");
+		color(16);
+		xuanze();
+		int x;
+		scanf("%d", &x);
+		getchar();
+		u = x;
+		while (u != 1 && u != 2)
+		{
+			color(12);
+			printf("\n\n输入有误，请重新输入:");
+			color(16);
+			scanf("%d", &u);
+			getchar();
+		}
+		if (u == 1)
+		{
+			jiazai();
+			color(14);
+			printf("载入成功！\n正在为您打开<组织创立与管理系统 >：\n");
+			color(16);
+			zhuzhiyemian();//ss
+			color(15);
+			printf("您正在重新选择!\n");
+			color(16);
+		}
+	} while (u == 1);
+
+	char d = '1';
+	char* pd = &d;
+	if (u == 2)
+	{
+		jiazai();
+		color(14);
+		printf("载入成功！\n正在为您打开<创立组织界面 >\n\n");
+		color(16);
+		system("pause");
+		system("cls");
+		color(14);
+		printf("正在为您建立组织！\n");
+		color(16);
+
+		printf("请输入建立组织名称：");
+		scanf("%s", zz.name1);
+		getchar();
+
+
+		printf("请输入除本人外的组织成员个数：");
+		scanf("%d", &g);
+		getchar();
+		printf("除本人外的组织成员个数为：%d\n", g);
+
+		int i, j;
+		color(12);
+		printf("\n（请将组织领导者的信息放在第一个输入，并且设定编码为0001）\n\n注意！编码不能相同！\n\n");
+		color(16);
+		printf("  现在请输入您在组织中的编号：");
+		scanf("%s", cy[0].num);
+		color(12);
+		printf("\n录入成功！\n");
+		color(16);
+
+		for (i = 1; i <= (int)g; i++)
+		{
+			printf("\n请输入第%d个组织成员信息:\n", i);
+			printf("编号:");
+			scanf("%s", cy[i].num);
+
+			printf("姓名:");
+			scanf("%s", cy[i].name);
+
+			printf("性别:");
+			scanf("%s", cy[i].xb);
+
+			printf("通关副本详情（输入1-20其中一个数字）:");
+			scanf("%s", cy[i].score);
+			printf("\n");
+		}
+
+
+		jiazai();
+		printf("载入成功！\n\n");
+		color(14);
+		printf("您已成功创立%s组织！\n\n", zz.name1);
+		color(16);
+		printf("   组织的基本信息如下：\n\n");
+		color(11);
+		printf("    ·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n\n");
+		printf("                        组织名称：%s            \n", zz.name1);
+		printf("                        组织领导者：%s           \n", cy[1].name);
+		printf("                        组织资料：暂无               \n\n");
+		printf("    ·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n\n\n");
+		color(16);
+		printf("   组织成员信息如下：\n\n");
+		chenyuan();
+		color(15);
+		printf("即将返回<组织创立与管理系统页面 >\n");
+		color(16);
+		system("pause");
+	}
+
+	int e = 1;
+	while (e = 1)
+	{
+		int c;
+		while ((c = getchar()) != '\n' && c != EOF); //缓冲区//最后的大循环冲突了
+		if (u == 2)                                                                                         //第二个   新建成员成功的新组织页面	
+		{
+			int c;	                                                                                                 //标签加在这里好 -->语法错误，不能这么用，还是加一个 do whilee
+			jiazai();
+			color(14);
+			printf("载入成功！\n已为您再次打开<组织创立与管理系统>：\n");
+			color(15);
+			printf("现在请选择 -->\n");
+			color(16);
+			zhuzhiyemian();
+			int u = 2;
+			do
+			{
+				int i = 0;
+				while (!i)
+				{
+					printf("\n                         请输入一位数字:");
+					char b;
+					scanf("%c", &b);
+					getchar();
+					switch (b)
+					{
+					case '1':
+					{
+						i = 1;
+						break;
+					}
+					case '2':
+					{
+						jiazai();
+						color(12);
+						printf("载入失败！\n\n");
+						color(16);
+						printf("您已加入了一个组织，无法创立组织！");
+						color(15);
+						printf("\n\n即将返回<组织创立与管理系统页面 >\n");
+						color(16);
+						i = 0;
+						system("pause");
+						break;
+					}
+					case '3':
+					{
+						jiazai();
+						color(12);
+						printf("载入失败！\n\n");
+						color(16);
+						printf("暂无相关数据！\n\n即将返回<组织创立与管理系统页面 >\n");
+						i = 0;
+						system("pause");
+						break;
+					}
+					case '4':
+						exit(0);
+						break;
+					default:
+					{
+						while ((c = getchar()) != '\n' && c != EOF); //缓冲区
+						system("cls");
+						color(12);
+						printf("\n\n注意！请正确地输入！\n\n");
+						color(16);
+						system("pause");
+						i = 0;
+					}
+
+					}
+
+					if (i == 0)
+					{
+						system("cls");
+						color(14);
+						printf("\n正在为您打开<组织创立与管理系统 >\n");
+						color(15);
+						printf("\n现在请重新选择 -->\n");
+						color(16);
+						zhuzhiyemian();//ss
+					}
+				}
+				system("cls");
+				color(15);
+				printf("\n\n请确定是否进入<我的组织界面 >\n\n");
+				color(16);
+				xuanze();
+				int x;
+				scanf("%d", &x);
+				getchar();
+				u = x;
+				while (u != 1 && u != 2)
+				{
+					color(12);
+					printf("\n\n输入有误，请重新输入:");
+					color(16);
+					scanf("%d", &u);
+					getchar();
+				}
+				if (u == 1)
+				{
+					system("cls");
+					color(15);
+					printf("\n您正在重新选择！\n");
+					color(16);
+					zhuzhiyemian();
+				}
+			} while (u == 1);
+		}
+
+		u = 2;
+		//新组织页面退出，进入我的组织页面
+
+		if (u == 2)
+		{
+			jiazai();
+			color(14);
+			printf("载入成功！\n正在为您打开<我的组织界面 >：\n\n");
+			color(16);
+			printf("   您的组织是%s！\n", zz.name1);
+			printf("   组织的基本信息如下：\n\n");
+			color(11);
+			printf("    ·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n");
+			printf("                        组织名称：%s            \n", zz.name1);
+			printf("                        组织领导者：%s           \n", cy[1].name);
+			printf("                        组织日志：暂无              \n");
+			printf("                        组织资料：暂无               \n");
+			printf("    ·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n\n\n");
+			color(14);
+			printf("   请在<我的组织查找界面>中进行选择 \n\n ");
+			color(16);
+			wdzzcz();
+			do                        //第三个
+			{
+				int i = 0;
+				while (!i)
+				{
+					int c;
+					color(15);
+					printf("\n                        请输入一位数字:"); color(16);
+					char b;
+					scanf("%c", &b);
+					printf("\n\n");
+					switch (b)
+					{
+					case '1':
+					{
+						while ((c = getchar()) != '\n' && c != EOF); //缓冲区
+						jiazai();
+						color(14);
+						printf("载入成功！\n正在为您打开<组织所有成员信息页面 >：\n\n");
+						color(16);
+						printf("   组织成员信息如下：\n");
+						chenyuan();                 //yy
+						
+						printf("  是否按照编号从小到大重新排序？\n");
+						color(11);
+						printf("   ·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n\n");
+						printf("                  输入1  -->我要排序！我现在就要排序！   \n\n");
+						printf("                  输入2  -->退出\n\n");
+						printf("   ·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n");
+						color(16);
+						printf("\n                    请输入一位数字:");
+
+						int c, x;
+						scanf("%d", &x);
+						while (x != 1 && x != 2)
+						{
+							printf("\n\n输入有误，请重新输入:");
+							scanf("%d", &x);
+							getchar();
+						}
+
+						if (x == 1)
+						{
+							printf("正在重新为您重新排序！\n");
+							jiazai();
+							int n = g + gg +1;
+							
+							for (int i = 0; i <= n-1; i++)
+							{
+								for (int j = i + 1; j <= n-1; j++)
+								{
+
+									if (strcmp(cy[i].score , cy[j].score)>0)
+									{
+										struct chenyuan temp;
+										temp = cy[i];
+										cy[i] = cy[j];
+										cy[j] = temp;
+									}
+								}
+							}
+		
+							while ((c = getchar()) != '\n' && c != EOF); //缓冲区
+							Sleep(1000);
+							printf("载入成功！\n\n已为您重新排序！\n\n\n");
+							printf("   组织成员信息如下：\n");
+							chenyuan();
+						}
+						
+						color(15);
+						printf("\n\t即将返回<组织创立与管理系统页面 >\n\n"); color(16);
+						system("pause");
+						i = 0;
+						break;
+					}
+					case '2':
+					{
+						jiazai();
+						color(14);
+						printf("载入成功！\n正在为您打开<查找组织成员界面 >\n\n");
+						color(16);
+						
+						do
+						{
+							system("cls");
+							color(15);
+							printf("\n\n  请选择你要进行的查询操作\n"); color(16);
+							color(11);
+							printf("·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n");
+							printf("\n     输入1  -->编号查询           输入2  -->姓名查询\n\n");
+							printf("·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n\n");
+							color(16);
+							int c, i, j;
+							
+							//缓冲区bug删了
+							color(15); printf("                     请输入一位数字:"); color(16);
+							scanf("%d", &i);
+
+							while (i != 1 && i != 2)
+							{
+								color(12);
+								printf("\n\n输入有误，请重新输入:");
+								color(16);
+								scanf("%d", &i);
+							}
+
+							if (i == 1)
+							{
+								system("cls");
+								color(15);
+								printf("\n请输入要查询组织成员的编号:"); color(16);
+								char x[10];
+								while ((c = getchar()) != '\n' && c != EOF); //缓冲区
+								scanf("%s", x);
+								getchar();
+
+								for (int i = 0; i <= 10; i++)
+								{
+									if (strcmp(cy[i].num, x) == 0)
+									{
+										color(15);
+										printf("\n\n查找成功！\n"); color(11);
+										printf("·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n");
+										printf("        编号         姓名        性别       通关副本详情  \n");
+										printf("        %s         %s         %s            %s\n", cy[i].num, cy[i].name, cy[i].xb, cy[i].score);
+										printf("·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n\n"); color(16);
+									}
+
+								}
+							}
+							else
+							{
+								system("cls");
+								color(15);
+								printf("\n请输入要查询成员的姓名："); color(16);
+								char x[10];
+								//缓冲区bug删了
+								scanf("%s", x);
+								getchar();
+								for (int i = 0; i <= 10; i++)
+								{
+									if (strcmp(cy[i].name, x) == 0)
+									{
+										color(15);
+										printf("\n\n查找成功！\n"); color(11);
+										printf("·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n");
+										printf("        编号         姓名        性别       通关副本详情  \n");
+										printf("        %s         %s         %s             %s\n", cy[i].num, cy[i].name, cy[i].xb, cy[i].score);
+										printf("·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n"); color(16);
+									}
+								}
+							}
+							printf("\n\n……\n……\n\n已加载全部资料！\n\n");
+							system("pause"); color(15);
+							system("cls");
+							printf("\n现在请选择 -->\n"); color(11);
+							printf("·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n\n");
+							printf("           输入1  -->让我查询！我现在就要查询！\n\n");
+							printf("           输入2  -->结束查询\n\n");
+							printf("·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n"); color(16);
+							color(15);
+							printf("\n                    请输入一位数字:"); color(16);
+							int qq=0;
+							scanf("%d", &qq);
+							getchar();
+							q = qq;
+							while (u != 1 && u != 2)
+							{
+								color(12);
+								printf("\n\n输入有误，请重新输入:");
+								color(16);
+								scanf("%d", &u);
+								getchar();
+								
+							}
+							
+							
+							
+						} while (q == 1);
+
+						i = 0;
+						system("cls");
+						break;
+					}
+					case '3':
+					{
+						jiazai();
+						color(12);
+						printf("载入失败！\n暂无<组织资料>相关数据！\n\n");
+						color(16);
+						i = 0;
+						system("pause");
+						break;
+					}
+					case '4':
+					{
+						i = 1;
+						system("cls");
+						break;
+					}
+					case '5':
+						exit(0);
+					default:
+					{
+						system("cls");
+						color(12);
+						printf("\n\n注意！请正确地输入！\n\n");
+						color(16);
+						system("pause");
+						int c;
+						while ((c = getchar()) != '\n' && c != EOF); //缓冲区
+						i = 0;
+					}
+
+					}
+
+
+					if (i == 0)
+					{
+						system("cls");
+						color(14);
+						printf("载入成功！\n\n正在为您打开<我的组织查找页面 >\n\n");
+						color(15);
+						printf("现在请重新选择 -->\n");
+						color(16);
+						wdzzcz();//缓冲区bug出现，所以删了
+					}
+				}
+				system("cls");
+				color(15);
+				printf("\n   你是否要进入<修改组织界面>？\n\n"); color(16);
+				xuanze();
+				int x;
+				int c;
+				while ((c = getchar()) != '\n' && c != EOF); //缓冲区
+				scanf("%d", &x);
+				getchar();
+				u = x;
+				while (u != 1 && u != 2)
+				{
+					color(12);
+					printf("\n\n输入有误，请重新输入:");
+					color(16);
+					scanf("%d", &u);
+					getchar();
+				}
+				if (u == 1)
+				{
+					jiazai();
+					color(16);
+					printf("\n您正在重新选择！\n\n"); color(16);
+					color(14);
+					printf("   请在<我的组织查找界面>中选择 -->\n");
+					color(16);
+					wdzzcz();
+				}
+			} while (u == 1);
+		}
+
+		//下面这个是修改界面
+		jiazai();
+
+		if (u == 2)
+		{
+			system("cls");
+			color(14);
+			printf("载入成功！\n正在为您打开<组织成员管理页面 >\n\n");
+			color(15);
+
+			printf("现在请选择 -->\n"); color(11);
+			printf("    ·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n");
+			printf("    *                    输入1  -->新建成员信息                    *\n");
+			printf("    *                    输入2  -->删除成员信息                    *\n");
+			printf("    *                    输入3  -->保存成员信息                    *\n");
+			printf("    *                    输入4  -->修改成员信息                    *\n");
+			printf("    *                    输入5  -->返回组织创立与管理系统          *\n");
+			printf("    ·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n"); color(16);
+			do                        //第三个
+			{
+				int i = 0;
+				while (!i)
+				{
+					int c;
+					color(15);
+					printf("\n                     请输入一位数字:");
+					color(16);
+					char b;
+					scanf("%c", &b);
+					getchar();
+					printf("\n");
+					switch (b)
+					{
+					case '1':
+					{
+						jiazai();
+						printf("载入成功！\n正在为您打开<新建成员信息页面 >\n\n");
+
+						printf("   目前组织成员信息如下：\n");
+						chenyuan();
+						printf("请输入你要新建成员的个数：");
+
+						scanf("%d", &ggg);                     //g+1是一开始的组员个数，ggg是每次新加个数，gg是总共新加个数即ggg的累加,目前成员共有g+1+gg个
+						getchar();                                         //cy[0]，按cy里的数字看就是有g+gg个
+						printf("新建成员的个数为：%d\n\n", ggg);
+						printf("\n\n注意！成员编码不能相同！\n\n");
+						gg += ggg;
+						int i, j;
+
+						for (i = 1; i <= ggg; i++)
+						{
+							printf("\n请输入第%d个新建成员信息:\n", i);
+							printf("编号:");
+							scanf("%s", cy[i + g + gg -ggg].num);
+
+							printf("姓名:");
+							scanf("%s", cy[i + g + gg -ggg].name);
+
+							printf("性别:");
+							scanf("%s", cy[i + g + gg - ggg].xb);
+
+							printf("通关副本详情（输入1-20其中一个数字）:");
+							scanf("%s", cy[i + g + gg - ggg].score);
+							printf("\n");
+						}
+
+						jiazai();
+						printf("新建成员成功！\n\n");
+						printf("现在组织共有%d名成员\n", g + gg + 1);
+						printf("   组织成员信息如下：\n");
+						chenyuan();                 //yy
+						printf("即将返回<组织成员管理页面 >\n\n");
+						system("pause");
+						while ((c = getchar()) != '\n' && c != EOF); //缓冲区
+						i = 0;
+						break;
+					}
+					case '2':
+					{
+						color(14);
+						printf("载入成功！\n已为您打开<删除成员信息界面 >：\n\n");
+						color(16);
+
+						printf("现在组织共有%d名成员\n", g + gg + 1);
+						color(15);
+						printf("   组织成员信息如下：\n"); color(16);
+						chenyuan();                 //yy
+
+
+						color(12);
+						printf("  请确定是否将成员信息删除？\n");
+						color(11);
+						printf("   ·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n\n");
+						printf("                  输入1  -->我要删除！我现在就要删除！   \n\n");
+						printf("                  输入2  -->退出\n\n");
+						printf("   ·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n");
+
+						color(15); printf("\n                    请输入一位数字:"); color(16);
+
+						int c, x;
+						scanf("%d", &x);
+						while (x != 1 && x != 2)
+						{
+							color(12);
+							printf("\n\n输入有误，请重新输入:"); color(16);
+							scanf("%d", &x);
+						}
+
+
+						if (x == 1)
+
+						{
+							int n = g + 1 + gg;
+							char sancu[10];
+							color(15);
+							printf("\n现在请输入你要删除成员的编号："); color(16);
+							scanf("%s", sancu);
+							getchar();
+
+							for (int i = 0; i <= n - 1; i++)
+							{
+								if (strcmp(sancu, cy[i].num) == 0)
+								{
+									for (int j = i; j <= n - 2; j++)
+									{
+										struct chenyuan temp;
+										temp = cy[j];
+										cy[j] = cy[j + 1];
+										cy[j + 1] = temp;
+									}
+								}
+							}
+							g -= 1;
+							jiazai();
+							color(12);
+							printf("删除成员成功！\n\n");
+							color(16);
+							printf("现在组织共有%d名成员\n", g + gg + 1);
+							printf("   组织成员信息如下：\n");
+							chenyuan();                 //yy
+							color(15);
+						}
+						printf("即将返回<组织成员管理页面 >\n\n");
+						color(16);
+						system("pause");
+						i = 0;
+						break;
+					}
+					case '3':
+					{
+						jiazai();
+						color(14);
+						printf("载入成功！\n正在为您打开<保存成员信息界面 >\n\n");
+						color(16);
+						printf("  请确定是否将成员信息保存在文件中？\n");
+						color(11);
+						printf("   ·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n\n");
+						printf("                  输入1  -->我要保存！我现在就要保存！   \n\n");
+						printf("                  输入2  -->退出\n\n");
+						printf("   ·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n");
+						
+						color(15); printf("\n                    请输入一位数字:"); color(16);
+
+						int c, x;
+						scanf("%d", &x);
+						while (x != 1 && x != 2)
+						{
+							color(12);
+							printf("\n\n输入有误，请重新输入:"); color(16);
+							scanf("%d", &x);
+						}
+
+						if (x == 1)
+						{
+							color(15);
+							printf("正在为您保存文件！\n");
+							color(16);
+							jiazai();
+
+							fp = fopen("chenyuan", "w");
+							for (i = 0; i < 5; i++)
+								if (fwrite(&cy[i], sizeof(struct chenyuan), 1, fp) != 1)
+									printf("flie write error\n");
+							fclose(fp);
+
+							Sleep(1000);
+							color(15);
+							printf("载入成功！\n\n已为您保存完毕！\n\n\n");
+							color(16);
+							printf("   保存的信息如下：\n");
+							chenyuan();
+						}
+
+						i = 0;
+						color(15);
+						printf("即将返回<组织成员管理页面 >\n\n");
+						color(16);
+						system("pause");
+						while ((c = getchar()) != '\n' && c != EOF); //缓冲区
+						break;
+					}
+					case '4':
+					{
+						system("cls");
+						color(14);
+						printf("   组织成员信息如下：\n");
+						color(16);
+						chenyuan();                 //yy
+						color(12);
+						printf("  请确定是否要修改成员信息？\n");
+						color(11);
+
+						printf("   ·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n\n");
+						printf("                  输入1  -->我要修改！我现在就要修改！   \n\n");
+						printf("                  输入2  -->退出\n\n");
+						printf("   ·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n"); 
+						color(15);
+						printf("\n                    请输入一位数字:");
+						color(16);
+
+						int c, x;
+						scanf("%d", &x);
+						getchar();
+						while (x != 1 && x != 2)
+						{
+							color(12);
+							printf("\n\n输入有误，请重新输入:");
+							color(16);
+							scanf("%d", &x);
+							getchar();
+						}
+
+						if (x == 1)
+						{
+							system("cls");
+							color(14);
+							printf("   组织成员信息如下：\n");
+							color(16);
+							chenyuan();                 //yy
+							color(14);
+							printf("已为您打开<修改信息界面 >\n\n");
+							
+							color(15);
+							printf("现在请选择 -->\n");
+							color(11);
+							printf("    ·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n");
+							printf("    *                    输入1  -->修改成员编号                    *\n");
+							printf("    *                    输入2  -->修改成员姓名                    *\n");
+							printf("    *                    输入3  -->修改成员性别                    *\n");
+							printf("    *                    输入4  -->修改成员副本通关详情            *\n");
+							printf("    ·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n\n");
+
+							int  i, j;
+							color(15);
+							printf("                        请输入一位数字:");
+							color(16);
+							scanf("%d", &i);
+							getchar();
+
+							while (i != 1 && i != 2 && i != 3 && i != 4 && i != 5)
+							{
+								color(12);
+								printf("\n\n输入有误，请重新输入:");
+								color(16);
+								scanf("%d", &i);
+								getchar();
+							}
+
+							if (i == 1)//情况1
+							{
+								system("cls");
+								color(15);
+								printf("   组织成员信息如下：\n"); color(16);
+								chenyuan();
+								color(12);
+								printf("\n\n注意！编码不能相同！\n\n"); 
+								color(15);
+								printf("\n请输入要修改的成员的编号:");
+								char x[10];
+								scanf("%s", x);
+								getchar();
+
+
+								printf("\n请输入修改后的编号:");
+								color(16);
+								char xx[10];
+								scanf("%s", xx);
+								getchar();
+
+
+								for (int i = 0; i <= 10; i++)
+								{
+									if (strcmp(cy[i].num, x) == 0)
+									{
+										strcpy(cy[i].num, xx);
+										system("cls");
+										color(14);
+										printf("\n\n修改成功！\n\n修改后的成员信息如下\n"); color(16);
+										color(11);
+										printf("·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n");
+										printf("        编号         姓名        性别       通关副本详情  \n");
+										printf("        %s         %s         %s            %s\n", cy[i].num, cy[i].name, cy[i].xb, cy[i].score);
+										printf("·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n\n"); color(16);
+									}
+									
+								}
+							}
+							else if (i == 2)//qingkuan2
+							{
+								system("cls");
+								color(15);
+								printf("   组织成员信息如下：\n");
+								color(16);
+								chenyuan();
+								color(12);
+								printf("\n\n注意！编码不能相同！\n\n");
+								color(15);
+								
+								printf("\n请输入要修改的成员的编号:"); 
+								char x[10];
+								scanf("%s", x);
+								getchar();
+
+
+								printf("\n请输入修改后的姓名:"); color(16);
+								char xx[10];
+								scanf("%s", xx);
+								getchar();
+
+								for (int i = 0; i <= 10; i++)
+								{
+									if (strcmp(cy[i].num, x) == 0)
+									{
+										strcpy(cy[i].name, xx);
+										system("cls");
+										color(14);
+										printf("\n\n修改成功！\n\n修改后的成员信息如下\n"); color(11);
+
+										printf("·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n");
+										printf("        编号         姓名        性别       通关副本详情  \n");
+										printf("        %s         %s         %s            %s\n", cy[i].num, cy[i].name, cy[i].xb, cy[i].score);
+										printf("·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n\n"); color(16);
+									}
+									
+								}
+							}
+							else if (i == 3)//qingkuan3
+							{
+								system("cls");
+								color(14);
+								printf("   组织成员信息如下：\n");
+								color(16);
+								chenyuan();
+								color(12);
+								printf("\n\n注意！编码不能相同！\n\n"); color(15);
+								printf("\n请输入要修改的成员的编号:");
+								char x[10];
+								scanf("%s", x);
+								getchar();
+
+
+								printf("\n请输入修改后的性别:"); color(16);
+								char xx[10];
+								scanf("%s", xx);
+								getchar();
+
+								for (int i = 0; i <= 10; i++)
+								{
+									if (strcmp(cy[i].num, x) == 0)
+									{
+										strcpy(cy[i].xb, xx);
+										system("cls"); color(14);
+										printf("\n\n修改成功！\n\n修改后的成员信息如下\n"); color(11);
+
+										printf("·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n");
+										printf("        编号         姓名        性别       通关副本详情  \n");
+										printf("        %s         %s         %s            %s\n", cy[i].num, cy[i].name, cy[i].xb, cy[i].score);
+										printf("·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n\n"); color(16);
+									}
+									
+
+								}
+							}
+							else //qingkuan4
+							{
+								system("cls");
+								color(14);
+								printf("   组织成员信息如下：\n"); color(16);
+								chenyuan(); color(12);
+								printf("\n\n注意！编码不能相同！\n\n"); color(15);
+								printf("\n请输入要修改的成员的编号:");
+								char x[10];
+								scanf("%s", x);
+								getchar();
+
+
+								printf("\n请输入修改后的通关副本详情:"); color(16);
+								char xx[10];
+								scanf("%s", xx);
+								getchar();
+
+								for (int i = 0; i <= 10; i++)
+								{
+									if (strcmp(cy[i].num, x) == 0)
+									{
+										strcpy(cy[i].score, xx);
+										system("cls"); color(14);
+										printf("\n\n修改成功！\n\n修改后的成员信息如下\n");
+										color(11);
+										printf("·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n");
+										printf("        编号         姓名        性别       通关副本详情  \n");
+										printf("        %s         %s         %s            %s\n", cy[i].num, cy[i].name, cy[i].xb, cy[i].score);
+										printf("·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n\n"); color(16);
+									}
+									
+								}
+							}
+
+						}
+						i = 0; color(15);
+						printf("\n\n即将返回<组织成员管理页面 >\n\n"); color(16);
+						system("pause");
+						break;
+
+					}
+					case '5':
+					{
+
+						i = 1;
+						break;
+					}
+					default:
+					{
+						system("cls");
+						color(12);
+						printf("\n\n注意！请正确地输入！\n\n");
+						color(16);
+						system("pause");
+						i = 0;
+					}
+
+					}
+					if (i == 0)
+					{
+						system("cls");
+						color(14);
+						printf("\n\n已为您打开<组织成员管理页面 >\n\n");
+						color(15);
+						printf("   现在请重新选择 -->\n"); color(11);
+						printf("    ·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n");
+						printf("    *                    输入1  -->新建成员信息                    *\n");
+						printf("    *                    输入2  -->删除成员信息                    *\n");
+						printf("    *                    输入3  -->保存成员信息                    *\n");
+						printf("    *                    输入4  -->修改成员信息                    *\n");
+						printf("    *                    输入5  -->返回组织创立与管理系统          *\n");
+						printf("    ·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n");
+						color(16);
+					}
+				}
+				system("cls"); color(15);
+				printf("\n   你是否要返回<组织创立与管理系统页面 >？\n\n"); color(16);
+				xuanze();
+				int x;
+				int c;
+				scanf("%d", &x);
+				getchar();
+				u = x;
+				while (u != 1 && u != 2)
+				{
+					color(12);
+					printf("\n\n输入有误，请重新输入:");
+					color(16);
+					scanf("%d", &u);
+					getchar();
+				}
+				if (u == 1)
+				{
+					system("cls");
+					color(15);
+					printf("\n您正在重新选择！\n");
+					color(11);
+					printf("    ·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n");
+					printf("    *                    输入1  -->新建成员信息                    *\n");
+					printf("    *                    输入2  -->删除成员信息                    *\n");
+					printf("    *                    输入3  -->保存成员信息                    *\n");
+					printf("    *                    输入4  -->修改成员信息                    *\n");
+					printf("    *                    输入5  -->返回组织创立与管理系统          *\n");
+					printf("    ·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n");    
+					color(16);//以上别动，马上回到主界面
+				}
+			} while (u == 1);                                                              //加了个标签，不回去了，就在这里结束吧
+		}                                                                                    //标签用不了，用了do，累了，世界毁灭吧
+
+		e = 1;
+
+	}
+	return 0;
+}
+
+
+void jiazai()                                                                    //其他一些外部的函数
+{
+	system("cls");
+	printf("正在载入中……\n……\n……\n……\n\n"); 
+	Sleep(1000);
+}
+
+void xuanze()
+{
+	color(11);
+	printf("·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n\n");
+	printf("             输入1  -->我要重新选择   \n\n");
+	printf("             输入2  -->我要进入！我现在就要进入！\n\n");
+	printf("·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n");
+	color(15);
+	printf("\n                  请输入一位数字:"); color(16);
+}
+
+void zhuzhiyemian()
+{
+	color(11);
+	printf("    ·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n");
+	printf("    *                    输入1  -->我的组织                        *\n");
+	printf("    *                    输入2  -->创立组织                        *\n");
+	printf("    *                    输入3 -->查看极点的现有组织               *\n");
+	printf("    *                    输入4 -->退出                             *\n");
+	printf("    ·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n");
+	color(16);
+}
+
+void wdzzcz()
+{
+	color(11);
+	printf("    ·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n");
+	printf("    *                    输入1  -->查看组织所有成员信息            *\n");
+	printf("    *                    输入2  -->查找组织成员                    *\n");
+	printf("    *                    输入3  -->查看组织资料                    *\n");
+	printf("    *                    输入4  -->修改组织成员资料                *\n");
+	printf("    *                    输入5  -->退出                            *\n");
+	printf("    ·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n");
+	color(16);
+}
+
+void chenyuan()
+{
+	color(11);
+	printf("    ·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n");;
+	printf("        编号         姓名          性别       通关副本详情  \n");
+	int i;
+	for (i = 0; i <= g + gg; i++)
+	{
+		printf("\n        %s         %s           %s              %s\n", cy[i].num, cy[i].name, cy[i].xb, cy[i].score);
+	}
+	printf("    ·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~·~\n\n\n");
+	color(16);
+}
